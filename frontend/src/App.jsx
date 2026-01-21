@@ -79,7 +79,9 @@ export default function App() {
         setTutorMessage("");
 
         try {
-            const response = await fetch("http://localhost:3001/run", {
+            const BACKEND_URL = "https://code-lab-ide.onrender.com"; // pon aquí tu URL real
+
+            const response = await fetch(`${BACKEND_URL}/run`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -106,7 +108,8 @@ export default function App() {
         setTutorMessage("Analizando tu código...");
 
         try {
-            const response = await fetch("http://localhost:3001/tutor", {
+            const BACKEND_URL = "https://code-lab-ide.onrender.com";
+            const response = await fetch(`${BACKEND_URL}/tutor`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
